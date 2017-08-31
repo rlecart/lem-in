@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/29 19:42:49 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/31 19:47:24 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/08/31 21:46:46 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,8 @@ struct			s_lem
 };
 
 void			error(int e);
+int				error_info(int e);
+int				valide_nbr(char *line);
 
 int				sp_gnl(char **line);
 

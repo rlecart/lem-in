@@ -6,63 +6,50 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/16 11:25:15 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/18 13:06:28 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/08/31 20:04:34 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		ft_nbrlen(long n)
+static int	ft_len_itoa(int nbr)
 {
-	int		count;
+	int	len;
 
-	count = 0;
-	while (n)
+	len = 0;
+	if (nbr <= 0)
+		len = 1;
+	while (nbr != 0)
 	{
-		n = n / 10;
-		count++;
+		nbr = nbr / 10;
+		len++;
 	}
-	return (count);
+	return (len);
 }
 
-static int		ft_gain_some_lines(char *isneg, long *n_cpy, int *count)
+char		*ft_itoa(int n)
 {
-	if (*n_cpy < 0)
-	{
-		*isneg = '1';
-		*n_cpy = *n_cpy * -1;
-		*count = ft_nbrlen(*n_cpy * 10);
-	}
-	else
-		*count = ft_nbrlen(*n_cpy);
-	return ('1');
-}
-
-char			*ft_itoa(int n)
-{
-	int		count;
-	char	isneg;
+	int		save;
+	int		len;
 	char	*str;
-	long	n_cpy;
+	int		tmp;
 
-	str = NULL;
-	isneg = '0';
-	count = 0;
-	n_cpy = n;
-	if (n_cpy >= -2147483648 && n_cpy != 0 && n_cpy <= 2147483647)
+	tmp = 0;
+	save = n;
+	len = ft_len_itoa(n);
+	if (!(str = (char*)malloc(sizeof(char) * (len + 1))))
+		return (0);
+	str[len--] = '\0';
+	while (len >= 0)
 	{
-		ft_gain_some_lines(&isneg, &n_cpy, &count);
-		if (!(str = ft_strnew(count)))
-			return (NULL);
-		str[count--] = '\0';
-		while (count >= 0)
-		{
-			str[count--] = n_cpy % 10 + '0';
-			n_cpy = n_cpy / 10;
-		}
-		if (isneg == '1')
-			str[0] = '-';
-		return (str);
+		tmp = save % 10;
+		if (tmp < 0)
+			tmp = -tmp;
+		str[len--] = tmp + 48;
+		save = save / 10;
 	}
-	return (ft_strdup("0"));
+	len++;
+	if (n < 0)
+		str[len] = '-';
+	return (str);
 }
