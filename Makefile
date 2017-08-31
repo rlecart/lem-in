@@ -6,15 +6,19 @@
 #    By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/08 16:32:35 by pbernier          #+#    #+#              #
-#    Updated: 2017/08/29 19:40:16 by pbernier         ###   ########.fr        #
+#    Updated: 2017/08/31 18:54:27 by pbernier         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-PROJECT			=	FILLER
+PROJECT			=	LEM_IN
 NAME			=	lem-in
 OBJDIR			=	objs/
 SRCDIR			=	srcs/
-SRC				=	main.c
+SRC				=	main.c \
+					init.c \
+					info.c \
+					clean.c \
+					error.c
 OBJ				=	$(addprefix $(OBJDIR),$(SRC:.c=.o))
 LIB				=	lib/libft/libft.a
 CC				=	gcc

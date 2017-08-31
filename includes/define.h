@@ -1,23 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   define.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/08/29 19:40:54 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/31 19:31:35 by pbernier         ###   ########.fr       */
+/*   Created: 2017/08/31 18:42:22 by pbernier          #+#    #+#             */
+/*   Updated: 2017/08/31 19:43:51 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <lem_in.h>
+#ifndef DEFINE_H
+# define DEFINE_H
 
-int		main(void)
-{
-	t_lem	l;
+# define ERROR_ON 1
+# define ERROR_OFF 0
 
-	init(&l);
+# define ERROR 0
+# define MALLOC 1
+# define FD 2
+# define NB_ANT 3
 
-	while (1);
-	return (0);
-}
+#endif

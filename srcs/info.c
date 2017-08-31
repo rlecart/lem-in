@@ -1,23 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   info.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/08/29 19:40:54 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/31 19:31:35 by pbernier         ###   ########.fr       */
+/*   Created: 2017/08/31 16:50:05 by pbernier          #+#    #+#             */
+/*   Updated: 2017/08/31 19:39:49 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <lem_in.h>
 
-int		main(void)
+int		sp_gnl(char **line)
 {
-	t_lem	l;
+	int		ret;
+	int		size;
+	char	buff[1];
 
-	init(&l);
-
-	while (1);
-	return (0);
+	size = 0;
+	buff[0] = '\0';
+	if (!(*line = (char *)malloc(sizeof(char) * (size + 1))))
+		error(MALLOC);
+	(*line)[size] = '\0';
+	while (buff[0] != '\n')
+	{
+		if ((ret = read(0, buff, 1)) == -1)
+			error(FD);
+		ft_strjoin_clean_char(line, buff[0]);
+		++size;
+	}
+	(*line)[size - 1] = '\0';
+	ret = size;
+	return (ret);
 }
