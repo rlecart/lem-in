@@ -6,11 +6,26 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/31 18:54:09 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/31 21:38:53 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/09/02 13:23:46 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <lem_in.h>
+
+void	usage(t_fil *l, int ac, char **av)
+{
+	else if (ac == 2 && (ft_strcmp(av[1], "-v")))
+	{
+		ft_putstr_fd("lem-in: illegal option -- ", 2);
+		ft_putstr_fd(av[0], 2);
+		ft_putstr_fd("\nusage: ./lem-in < [-v] map\n", 2)
+	}
+	else if (ac > 2)
+		ft_putstr_fd("usage: ./lem-in < [-v] map\n", 2);
+	else if (ac == 1 || ac == 2)
+		return ;
+	exit(0);
+}
 
 void	error(int e)
 {

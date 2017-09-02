@@ -6,16 +6,17 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/29 19:40:54 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/31 21:57:50 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/09/02 13:12:17 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <lem_in.h>
 
-int		main(void)
+int		main(int ac, char **av)
 {
 	t_lem	l;
 
+	usage(&l, ac, av);
 	init(&l);
 	return (0);
 }
