@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/31 16:54:06 by pbernier          #+#    #+#             */
-/*   Updated: 2017/09/02 15:15:02 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/09/02 15:23:57 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ void	init_ant_nb(t_lem *l)
 	sp_gnl(l, &l->p.line);
 	while (l->p.line[0] == '#')
 	{
-		if ((ft_strcmp(l->p.line, "##start")) ||
-			(ft_strcmp(l->p.line, "##end")))
+		if (!(ft_strcmp(l->p.line, "##start")) ||
+			!(ft_strcmp(l->p.line, "##end")))
 			error(NB_ANT, l);
 		add_line(l);
 		sp_gnl(l, &l->p.line);
