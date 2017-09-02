@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/29 19:42:49 by pbernier          #+#    #+#             */
-/*   Updated: 2017/09/02 13:10:56 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/09/02 14:29:47 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,9 @@ struct			s_room
 
 struct			s_print
 {
-	int			error;
 	int			v;
 	char		*line;
-	char		**map;
+	char		*map;
 };
 
 struct			s_lem
@@ -59,13 +58,18 @@ struct			s_lem
 	t_room		end;
 };
 
-void			error(int e);
-void			usage(t_fil *l, int ac, char **av)
-int				error_info(int e);
+void			error(int e, t_lem *l);
+void			usage(t_lem *l, int ac, char **av);
 int				valide_nbr(char *line);
 
-int				sp_gnl(char **line);
+int				sp_gnl(t_lem *l, char **line);
 
 void			init(t_lem *l);
+
+void			add_line(t_lem *l);
+
+void			print_map(t_print *p);
+
+void			clean_print(t_print *p);
 
 #endif

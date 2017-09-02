@@ -6,41 +6,42 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/31 18:54:09 by pbernier          #+#    #+#             */
-/*   Updated: 2017/09/02 13:23:46 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/09/02 15:02:41 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <lem_in.h>
 
-void	usage(t_fil *l, int ac, char **av)
+void	usage(t_lem *l, int ac, char **av)
 {
-	else if (ac == 2 && (ft_strcmp(av[1], "-v")))
+	l->p.v = 0;
+	if (ac == 2 && (ft_strcmp(av[1], "-v")))
 	{
 		ft_putstr_fd("lem-in: illegal option -- ", 2);
 		ft_putstr_fd(av[0], 2);
-		ft_putstr_fd("\nusage: ./lem-in < [-v] map\n", 2)
+		ft_putstr_fd("\nusage: ./lem-in < [-v] map\n", 2);
+		exit(0);
 	}
 	else if (ac > 2)
 		ft_putstr_fd("usage: ./lem-in < [-v] map\n", 2);
-	else if (ac == 1 || ac == 2)
+	else if (ac == 2 && !(ft_strcmp(av[1], "-v")))
+		l->p.v = 1;
+	if (ac == 1 || ac == 2)
 		return ;
 	exit(0);
 }
 
-void	error(int e)
+void	error(int e, t_lem *l)
 {
-	(e == MALLOC) ? ft_putstr_fd("\nMalloc error\n", 2) : 0;
-	(e == FD) ? ft_putstr_fd("\nCan't read fd 0\n", 2) : 0;
-	(e == ERROR) ? ft_putstr_fd("\nERROR\n", 2) : 0;
-	exit(-1);
-}
-
-int		error_info(int e)
-{
-	(e == NB_ANT) ? ft_putstr_fd("\nInvalide ant number\n", 2) : 0;
-	if (e != -1)
-		return (0);
-	return (1);
+	(e == MALLOC) ? ft_putstr_fd("Malloc error\n", 2) : 0;
+	(e == FD) ? ft_putstr_fd("Can't read fd 0\n", 2) : 0;
+	if (l->p.v == 0 && e != MALLOC && e != FD)
+		e = ERROR;
+	(e == ERROR) ? ft_putstr_fd("ERROR\n", 2) : 0;
+	(e == NB_ANT) ? ft_putstr_fd("Invalide ant number\n", 2) : 0;
+	clean_print(&l->p);
+	read(1, ((char[2]){"0\0"}), 1);
+	exit(0);
 }
 
 int		valide_nbr(char *line)
