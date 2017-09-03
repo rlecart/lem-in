@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/31 18:54:09 by pbernier          #+#    #+#             */
-/*   Updated: 2017/09/02 15:02:41 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/09/03 17:19:52 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	usage(t_lem *l, int ac, char **av)
 	exit(0);
 }
 
-void	error(int e, t_lem *l)
+void	error(t_lem *l, int e)
 {
 	(e == MALLOC) ? ft_putstr_fd("Malloc error\n", 2) : 0;
 	(e == FD) ? ft_putstr_fd("Can't read fd 0\n", 2) : 0;
@@ -39,19 +39,13 @@ void	error(int e, t_lem *l)
 		e = ERROR;
 	(e == ERROR) ? ft_putstr_fd("ERROR\n", 2) : 0;
 	(e == NB_ANT) ? ft_putstr_fd("Invalide ant number\n", 2) : 0;
+	(e == NAME_ROOM) ? ft_putstr_fd("Invalide room name\n", 2) : 0;
+	(e == COOR_ROOM) ? ft_putstr_fd("Invalide coordinate\n", 2) : 0;
+	(e == INFO_START) ? ft_putstr_fd("Invalide info for start\n", 2) : 0;
+	(e == INFO_END) ? ft_putstr_fd("Invalide info for end\n", 2) : 0;
+	(e == MISS_START) ? ft_putstr_fd("Missing room start\n", 2) : 0;
+	(e == MISS_END) ? ft_putstr_fd("Missing room end\n", 2) : 0;
 	clean_print(&l->p);
 	read(1, ((char[2]){"0\0"}), 1);
 	exit(0);
-}
-
-int		valide_nbr(char *line)
-{
-	int	i;
-
-	i = (line[0] == '-') ? 1 : 0;
-	while (line[i] >= '0' && line[i] <= '9')
-		++i;
-	if ((line[i]) || (line[0] == '-' && !line[1]))
-		return (0);
-	return (1);
 }

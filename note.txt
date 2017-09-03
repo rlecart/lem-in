@@ -1,3 +1,4 @@
 Valide number = "2" "-55"
-
-A test : no start and end
+Valide_nbr : fonction a revoir.
+Difference entre "##start" et "#start   ".
+Ne gere pas les cas oú le nom compient '-'.

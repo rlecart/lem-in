@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/02 13:26:55 by pbernier          #+#    #+#             */
-/*   Updated: 2017/09/02 15:23:49 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/09/03 16:38:02 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,8 @@
 
 void	add_line(t_lem *l)
 {
-	ft_strjoin_clean_char(&l->p.line, '\n');
 	ft_strjoin_clean(&l->p.map, &l->p.line);
-	ft_memdel((void **)&l->p.line);
+	ft_strjoin_clean_char(&l->p.map, '\n');
 }
 
 void	print_map(t_print *p)

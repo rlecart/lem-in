@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/29 19:42:49 by pbernier          #+#    #+#             */
-/*   Updated: 2017/09/02 14:29:47 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/09/03 16:22:52 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,16 +53,18 @@ struct			s_lem
 {
 	int			nb_ant;
 	t_print		p;
-	t_room		start;
-	t_room		room;
-	t_room		end;
+	t_room		*start;
+	t_room		*room;
+	t_room		*end;
 };
 
-void			error(int e, t_lem *l);
+void			error(t_lem *l, int e);
 void			usage(t_lem *l, int ac, char **av);
-int				valide_nbr(char *line);
 
 int				sp_gnl(t_lem *l, char **line);
+
+int				valide_nbr(char *line);
+int				valide_room(t_lem *l, char *line);
 
 void			init(t_lem *l);
 

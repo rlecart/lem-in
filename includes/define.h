@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/31 18:42:22 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/31 19:43:51 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/09/03 17:19:28 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,12 @@
 # define MALLOC 1
 # define FD 2
 # define NB_ANT 3
+# define NAME_ROOM 4
+# define COOR_ROOM 5
+# define INFO_START 6
+# define INFO_END 7
+# define MISS_START 8
+# define MISS_END 8
+
 
 #endif
