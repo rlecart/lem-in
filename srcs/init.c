@@ -6,11 +6,20 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/31 16:54:06 by pbernier          #+#    #+#             */
-/*   Updated: 2017/09/03 17:22:27 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/09/03 21:44:31 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <lem_in.h>
+
+void	set_all(t_lem *l)
+{
+	l->p.line = NULL;
+	l->p.map = ft_strnew(0);
+	l->start = NULL;
+	l->room = NULL;
+	l->end = NULL;
+}
 
 void	init_ant_nb(t_lem *l)
 {
@@ -34,10 +43,7 @@ void	init_ant_nb(t_lem *l)
 
 void	init(t_lem *l)
 {
-	l->p.line = NULL;
-	l->p.map = ft_strnew(0);
-	l->start = NULL;
-	l->end = NULL;
+	set_all(l);
 	init_ant_nb(l);
 	while ((init_rooms(l)))
 		ft_memdel((void **)&l->p.line);

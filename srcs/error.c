@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/31 18:54:09 by pbernier          #+#    #+#             */
-/*   Updated: 2017/09/03 17:19:52 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/09/03 21:48:39 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,13 @@ void	error(t_lem *l, int e)
 	(e == INFO_END) ? ft_putstr_fd("Invalide info for end\n", 2) : 0;
 	(e == MISS_START) ? ft_putstr_fd("Missing room start\n", 2) : 0;
 	(e == MISS_END) ? ft_putstr_fd("Missing room end\n", 2) : 0;
+	(e == CONF_START) ? ft_putstr_fd("Conflict room start\n", 2) : 0;
+	(e == CONF_END) ? ft_putstr_fd("Conflict room end\n", 2) : 0;
+
 	clean_print(&l->p);
+	clean_room(l->room);
+	clean_room(l->start);
+	clean_room(l->end);
 	read(1, ((char[2]){"0\0"}), 1);
 	exit(0);
 }

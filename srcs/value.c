@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/03 14:50:52 by pbernier          #+#    #+#             */
-/*   Updated: 2017/09/03 17:00:38 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/09/03 22:03:24 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ int		valide_room(t_lem *l, char *line)
 
 	i = 0;
 	nb_size = 0;
-	// printf("[%s]\n", line);
 	if (line[i] && (line[i] == 'L'))
 		error(l, NAME_ROOM);
 	while (line[i] && line[i] != ' ')
@@ -43,7 +42,7 @@ int		valide_room(t_lem *l, char *line)
 		++nb_size;
 	if (nb_size == i || line[nb_size] != ' ')
 		error(l, COOR_ROOM);
-	i = nb_size;
+	i = ++nb_size;
 	while (line[nb_size] >= '0' && line[nb_size] <= '9')
 		++nb_size;
 	if (nb_size == i || (line[nb_size]))
