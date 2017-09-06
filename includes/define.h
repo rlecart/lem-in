@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/31 18:42:22 by pbernier          #+#    #+#             */
-/*   Updated: 2017/09/03 21:49:12 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/09/07 00:03:37 by rlecart          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@
 # define MISS_START 8
 # define MISS_END 9
 # define CONF_START 10
-# define CONF_END 11 
-
+# define CONF_END 11
 
 #endif
