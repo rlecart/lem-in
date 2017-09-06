@@ -1,0 +1,4 @@
+Valide number = "2" "-55"
+Valide_nbr : fonction a revoir.
+Difference entre "##start" et "#start   ".
+Ne gere pas les cas oú le nom compient '-'.
