@@ -6,13 +6,13 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/03 14:50:52 by pbernier          #+#    #+#             */
-/*   Updated: 2017/09/07 04:54:13 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/09/07 09:32:47 by rlecart          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <lem_in.h>
 
-int		valide_nbr(char *line)
+int		valid_nbr(char *line)
 {
 	int	i;
 
@@ -24,7 +24,7 @@ int		valide_nbr(char *line)
 	return (1);
 }
 
-int		valide_room(t_lem *l, char *line)
+int		valid_room(t_lem *l, char *line)
 {
 	int	i;
 	int	nb_size;
@@ -50,7 +50,7 @@ int		valide_room(t_lem *l, char *line)
 	return (1);
 }
 
-int		valide_link(t_lem *l, char *line)
+int		valid_link(t_lem *l, char *line)
 {
 	int		len;
 

@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strtabnew.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rlecart <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/08/29 19:40:54 by pbernier          #+#    #+#             */
-/*   Updated: 2017/09/07 09:28:25 by rlecart          ###   ########.fr       */
+/*   Created: 2017/03/07 17:27:39 by rlecart           #+#    #+#             */
+/*   Updated: 2017/09/07 08:14:28 by rlecart          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <lem_in.h>
+#include <libft.h>
 
-int		main(int ac, char **av)
+char	**ft_strtabnew(int x, int y)
 {
-	t_lem	l;
+	int		i;
+	char	**str;
 
-	usage(&l, ac, av);
-	init(&l);
-
-	print_map(&l.p);
-	read(1, ((char[2]){"0\0"}), 1);
-	return (0);
+	i = 0;
+	str = ft_memalloc(sizeof(char*) * (y + 1));
+	while (i < y)
+		str[i++] = ft_strnew(x);
+	str[i] = NULL;
+	return (str);
 }

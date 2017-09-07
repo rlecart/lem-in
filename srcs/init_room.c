@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/03 17:04:13 by pbernier          #+#    #+#             */
-/*   Updated: 2017/09/07 05:21:22 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/09/07 09:28:25 by rlecart          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ int		init_start(t_lem *l)
 		ft_memdel((void **)&l->p.line);
 		sp_gnl(l, &l->p.line);
 	}
-	if (!valide_room(l, l->p.line))
+	if (!valid_room(l, l->p.line))
 		error(l, INFO_START);
 	if ((l->start))
 		error(l, CONF_START);
@@ -89,7 +89,7 @@ int		init_end(t_lem *l)
 		ft_memdel((void **)&l->p.line);
 		sp_gnl(l, &l->p.line);
 	}
-	if (!valide_room(l, l->p.line))
+	if (!valid_room(l, l->p.line))
 		error(l, INFO_END);
 	if ((l->end))
 		error(l, CONF_END);
@@ -108,7 +108,7 @@ int		init_rooms(t_lem *l)
 		return ((init_start(l)));
 	else if (!ft_strcmp(l->p.line, "##end"))
 		return ((init_end(l)));
-	if ((l->p.line[0] != '#') && (valide_room(l, l->p.line)))
+	if ((l->p.line[0] != '#') && (valid_room(l, l->p.line)))
 		return (init_rooms_struct(&l->room, l, l->p.line, -1));
 	else if (l->p.line[0] != '#')
 	{

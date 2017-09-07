@@ -6,14 +6,14 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/29 19:42:49 by pbernier          #+#    #+#             */
-/*   Updated: 2017/09/07 06:07:22 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/09/07 09:29:25 by rlecart          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LEM_IN_H
 # define LEM_IN_H
 
-# include <libft.h>
+# include "../lib/libft/includes/libft.h"
 # include <define.h>
 # include <unistd.h>
 # include <stdlib.h>
@@ -65,9 +65,9 @@ void			usage(t_lem *l, int ac, char **av);
 
 int				sp_gnl(t_lem *l, char **line);
 
-int				valide_nbr(char *line);
-int				valide_room(t_lem *l, char *line);
-int				valide_link(t_lem *l, char *line);
+int				valid_nbr(char *line);
+int				valid_room(t_lem *l, char *line);
+int				valid_link(t_lem *l, char *line);
 
 void			init(t_lem *l);
 int				init_rooms(t_lem *l);

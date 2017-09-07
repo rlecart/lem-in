@@ -6,7 +6,7 @@
 #    By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/02/21 03:19:16 by pbernier          #+#    #+#              #
-#    Updated: 2017/08/29 14:45:33 by pbernier         ###   ########.fr        #
+#    Updated: 2017/09/07 07:40:30 by rlecart          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -89,7 +89,9 @@ SRC			=	ft_putstr.c \
 				ft_intlen_base.c \
 				ft_strreset.c \
 				ft_llen.c \
-				get_next_line.c
+				get_next_line.c \
+				ft_intnew.c \
+				ft_strtabnew.c
 OBJ			=	$(addprefix $(OBJDIR),$(SRC:.c=.o))
 CC			=	gcc
 CFLAGS		=	-Wall -Werror -Wextra -I includes/ -Ofast

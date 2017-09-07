@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/31 16:54:06 by pbernier          #+#    #+#             */
-/*   Updated: 2017/09/07 05:35:12 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/09/07 09:32:28 by rlecart          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,9 @@ void	set_all(t_lem *l)
 {
 	l->p.line = NULL;
 	l->p.map = ft_strnew(0);
-	l->p.name_check[0] = NULL;
-	l->p.name_check[1] = NULL;
+//	l->p.name_check[0] = NULL;
+//	l->p.name_check[1] = NULL;
+	l->p.name_check = NULL;
 	l->start = NULL;
 	l->room = NULL;
 	l->end = NULL;
@@ -36,7 +37,7 @@ void	init_ant_nb(t_lem *l)
 		ft_memdel((void **)&l->p.line);
 		sp_gnl(l, &l->p.line);
 	}
-	if (!valide_nbr(l->p.line))
+	if (!valid_nbr(l->p.line))
 		error(l, NB_ANT);
 	if ((l->nb_ant = ft_atoi(l->p.line)) <= 0)
 		error(l, NB_ANT);
