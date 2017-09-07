@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/31 16:54:06 by pbernier          #+#    #+#             */
-/*   Updated: 2017/09/03 21:44:31 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/09/07 05:00:22 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,4 +47,9 @@ void	init(t_lem *l)
 	init_ant_nb(l);
 	while ((init_rooms(l)))
 		ft_memdel((void **)&l->p.line);
+	while ((init_links(l)))
+	{
+		ft_memdel((void **)&l->p.line);
+		sp_gnl(l, &l->p.line);
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/29 19:42:49 by pbernier          #+#    #+#             */
-/*   Updated: 2017/09/07 03:24:09 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/09/07 05:21:16 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ struct			s_room
 	char		*name;
 	int			pond;
 	t_ant		*ant;
+	int			nb_link;
 	t_room		**link;
 	t_room		*next;
 };
@@ -65,9 +66,11 @@ int				sp_gnl(t_lem *l, char **line);
 
 int				valide_nbr(char *line);
 int				valide_room(t_lem *l, char *line);
+int				valide_link(t_lem *l, char *line);
 
 void			init(t_lem *l);
 int				init_rooms(t_lem *l);
+int				init_links(t_lem *l);
 
 void			add_line(t_lem *l);
 
