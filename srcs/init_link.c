@@ -6,19 +6,35 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/07 03:37:58 by pbernier          #+#    #+#             */
-/*   Updated: 2017/09/07 05:24:12 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/09/07 06:08:26 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <lem_in.h>
 
-//void	set_link(t_lem *l)
+void	link_list(t_room *fst, t_room *sec);
+{
+
+}
+
+void	set_link(t_lem *l, char *name_check, int sw)
+{
+	static t_room	*tmp = NULL;
+
+	l->room = l->start;
+	while ((l->room) && ft_strcmp(name_check, l->room->name))
+		l->room = l->room->next;
+	(!l->room) ? error(l, LINK_NAME) : 0;
+	if (sw == 1)
+		tmp = l->room;
+	if (sw == 2)
+		link_list(&tmp, &l->room);
+}
 
 int		init_links(t_lem *l)
 {
 	int		len_1;
 	int		len_2;
-	char	*(name_check[2]);
 
 	len_1 = 0;
 	len_2 = 0;
@@ -29,15 +45,17 @@ int		init_links(t_lem *l)
 	valide_link(l, l->p.line);
 	while ((l->p.line[len_1] != '-'))
 		++len_1;
-	name_check[0] = ft_strsub(l->p.line, 0, len_1);
+	l->p.name_check = ft_strsub(l->p.line, 0, len_1);
+	set_link(l, l->p.name_check, 1);
+	ft_memdel((void **)&l->p.name_check);
 	len_2 = ++len_1;
 	while ((l->p.line[len_2]))
 		++len_2;
 	len_2 -= len_1;
-	name_check[1] = ft_strsub(l->p.line, len_1, len_2);
-	//printf("[%s][%d] - [%s][%d]\n", name_check[0], len_1, name_check[1], len_2);
-	//set_link(l, name_check[0], name_check[1]);
-	ft_memdel((void **)&name_check[0]);
-	ft_memdel((void **)&name_check[1]);
+	l->p.name_check = ft_strsub(l->p.line, len_1, len_2);
+	set_link(l, l->p.name_check, 2);
+	ft_memdel((void **)&l->p.name_check);
+	//printf("[%s][%d] - [%s][%d]\n", l->p.name_check[0], len_1, l->p.name_check[1], len_2);
+
 	return (0);
 }

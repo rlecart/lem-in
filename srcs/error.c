@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/31 18:54:09 by pbernier          #+#    #+#             */
-/*   Updated: 2017/09/07 01:47:20 by rlecart          ###   ########.fr       */
+/*   Updated: 2017/09/07 05:58:07 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,12 @@ void	error(t_lem *l, int e)
 	(e == MISS_END) ? ft_putstr_fd("Missing room end\n", 2) : 0;
 	(e == CONF_START) ? ft_putstr_fd("Conflict room start\n", 2) : 0;
 	(e == CONF_END) ? ft_putstr_fd("Conflict room end\n", 2) : 0;
-
+	(e == LINK) ? ft_putstr_fd("Invalide link\n", 2) : 0;
+	if (e == LINK_NAME)
+	{
+		ft_putstr_fd("Invalide room name : ", 2);
+		ft_putendl_fd(l->p.name_check, 2);
+	}
 	clean_print(&l->p);
 	clean_room(l->room);
 	clean_room(l->start);

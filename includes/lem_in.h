@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/29 19:42:49 by pbernier          #+#    #+#             */
-/*   Updated: 2017/09/07 05:21:16 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/09/07 06:07:22 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ struct			s_print
 	int			v;
 	char		*line;
 	char		*map;
+	char		*name_check;
 };
 
 struct			s_lem

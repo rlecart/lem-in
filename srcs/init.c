@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/31 16:54:06 by pbernier          #+#    #+#             */
-/*   Updated: 2017/09/07 05:00:22 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/09/07 05:35:12 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,12 @@ void	set_all(t_lem *l)
 {
 	l->p.line = NULL;
 	l->p.map = ft_strnew(0);
+	l->p.name_check[0] = NULL;
+	l->p.name_check[1] = NULL;
 	l->start = NULL;
 	l->room = NULL;
 	l->end = NULL;
+
 }
 
 void	init_ant_nb(t_lem *l)
