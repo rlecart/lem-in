@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/03 14:50:52 by pbernier          #+#    #+#             */
-/*   Updated: 2017/09/07 01:05:23 by rlecart          ###   ########.fr       */
+/*   Updated: 2017/09/07 04:54:13 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,22 @@ int		valide_room(t_lem *l, char *line)
 		++nb_size;
 	if (nb_size == i || (line[nb_size]))
 		error(l, COOR_ROOM);
+	return (1);
+}
+
+int		valide_link(t_lem *l, char *line)
+{
+	int		len;
+
+	len = 0;
+	while ((line[len]) && line[len] != '-')
+		++len;
+	(line[len++] != '-') ? error(l, LINK) : 0;
+	while ((line[len]) &&
+			line[len] != '-' &&
+			line[len] != ' ')
+		++len;
+	if ((line[len]))
+		error(l, LINK);
 	return (1);
 }
