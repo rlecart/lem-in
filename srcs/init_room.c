@@ -6,11 +6,25 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/03 17:04:13 by pbernier          #+#    #+#             */
-/*   Updated: 2017/09/07 01:41:51 by rlecart          ###   ########.fr       */
+/*   Updated: 2017/09/07 03:34:49 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <lem_in.h>
+
+void	place_rooms(t_lem *l)
+{
+	t_room *tmp;
+
+	while ((l->room) && (l->room->next))
+		l->room = l->room->next;
+	tmp = (!(l->room)) ? l->end : l->room;
+	l->start->next = tmp;
+	tmp->prev = l->start;
+	tmp = (!(l->room)) ? l->start : l->room;
+	l->end->prev = tmp;
+	tmp->next = l->end;
+}
 
 int		init_rooms_struct(t_room **room, t_lem *l, char *line, int len)
 {
@@ -100,7 +114,7 @@ int		init_rooms(t_lem *l)
 	{
 		(!l->start) ? error(l, MISS_START) : 0;
 		(!l->end) ? error(l, MISS_END) : 0;
-		//place_rooms()
+		place_rooms(l);
 		ft_memdel((void **)&l->p.line);
 		return (0);
 	}
