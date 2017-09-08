@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/31 16:54:12 by pbernier          #+#    #+#             */
-/*   Updated: 2017/09/07 05:46:53 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/09/08 15:49:06 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void	clean_print(t_print *p)
 {
-	//si ils existent
 	ft_memdel((void **)&p->line);
 	ft_memdel((void **)&p->map);
 	ft_memdel((void **)&p->name_check);
@@ -40,4 +39,12 @@ void	clean_room(t_room *room)
 		clean_room(room->next);
 	else
 		ft_memdel((void **)&room);
+}
+
+void	clean_all(t_lem *l)
+{
+	clean_print(&l->p);
+	clean_room(l->room);
+	clean_room(l->start);
+	clean_room(l->end);
 }

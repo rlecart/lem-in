@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/29 19:42:49 by pbernier          #+#    #+#             */
-/*   Updated: 2017/09/08 14:27:52 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/09/08 15:47:34 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,6 @@ void			add_line(t_lem *l);
 
 void			print_map(t_print *p);
 
-void			clean_print(t_print *p);
-void			clean_room(t_room *room);
+void			clean_all(t_lem *l);
 
 #endif

@@ -38,9 +38,6 @@ printf "\033[1;34m-----------------------------------------\033[0;m\n"
 	printf "error_missing_room.map\n"
 	read
 	./lem-in -v < ./tests/error_missing_room.map
-	printf "error_missing_room.map\n"
-	read
-	./lem-in -v < ./tests/error_missing_room.map
 	printf "error_missing_start.map\n"
 	read
 	./lem-in -v < ./tests/error_missing_start.map
