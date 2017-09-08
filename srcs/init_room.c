@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/03 17:04:13 by pbernier          #+#    #+#             */
-/*   Updated: 2017/09/07 07:51:30 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/09/08 14:20:09 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,20 @@
 
 void	place_rooms(t_lem *l)
 {
-	t_room *tmp;
-
-	while ((l->room) && (l->room->next))
-		l->room = l->room->next;
-	tmp = (!(l->room)) ? l->end : l->room;
-	l->start->next = tmp;
-	tmp->prev = l->start;
-	tmp = (!(l->room)) ? l->start : l->room;
-	l->end->prev = tmp;
-	tmp->next = l->end;
+	if (!(l->room))
+	{
+		l->start->next = l->end;
+		l->end->prev = l->start;
+		l->room = l->start;
+		return ;
+	}
+	l->room->next = l->end;
+	l->end->prev = l->room;
+	while ((l->room) && (l->room->prev))
+		l->room = l->room->prev;
+	l->room->prev = l->start;
+	l->start->next = l->room;
+	l->room = l->start;
 }
 
 int		init_rooms_struct(t_room **room, t_lem *l, char *line, int len)
@@ -34,11 +38,6 @@ int		init_rooms_struct(t_room **room, t_lem *l, char *line, int len)
 	add_line(l);
 	while ((*room))
 	{
-		if ((l->room->prev))
-			printf(".[%s]\n", l->room->prev->name);
-		printf("..[%s]\n", l->room->name);
-		if ((l->room->next))
-			printf("...[%s]\n\n", l->room->next->name);
 		tmp = *room;
 		*room = (*room)->next;
 	}
@@ -120,9 +119,6 @@ int		init_rooms(t_lem *l)
 		(!l->start) ? error(l, MISS_START) : 0;
 		(!l->end) ? error(l, MISS_END) : 0;
 		place_rooms(l);
-		printf("[%s]\n", l->start->name);
-		printf("[%s]\n", l->start->next->name);
-		printf("[%s]\n", l->start->next->next->name);
 		return (0);
 	}
 	return (1);
