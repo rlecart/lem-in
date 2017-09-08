@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/03 17:04:13 by pbernier          #+#    #+#             */
-/*   Updated: 2017/09/08 14:20:09 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/09/08 16:54:13 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,18 +43,18 @@ int		init_rooms_struct(t_room **room, t_lem *l, char *line, int len)
 	}
 	if (!(*room = (t_room *)malloc(sizeof(t_room))))
 		error(l, MALLOC);
-	if ((tmp))
-		tmp->next = *room;
+	((tmp)) ? tmp->next = *room : 0;
 	(*room)->prev = tmp;
 	while (line[++len] != ' ')
 		;
 	if (!((*room)->name = ft_strsub(line, 0, len)))
 		error(l, MALLOC);
 	(*room)->pond = 0;
+	(*room)->ant = NULL;
 	(*room)->nb_link = 0;
 	if (!((*room)->link = (t_room **)malloc(sizeof(t_room *))))
 		error(l, MALLOC);
-	(*room)->link[0] = NULL;
+	((*room)->link)[0] = NULL;
 	(*room)->next = NULL;
 	return (1);
 }
@@ -103,7 +103,8 @@ int		init_end(t_lem *l)
 
 int		init_rooms(t_lem *l)
 {
-	sp_gnl(l, &l->p.line);
+	if (!sp_gnl(l, &l->p.line))
+		return(0);
 	if ((l->p.line[0] == '#') || (!ft_strncmp(l->p.line, "##", 2)))
 		add_line(l);
 	if ((l->p.line[0] == '#') && (ft_strncmp(l->p.line, "##", 2)))

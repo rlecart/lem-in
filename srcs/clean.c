@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/31 16:54:12 by pbernier          #+#    #+#             */
-/*   Updated: 2017/09/08 15:49:06 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/09/08 16:41:52 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,9 @@ void	clean_room(t_room *room)
 		return ;
 	ft_memdel((void **)&room->name);
 	ft_memdel((void **)&room->ant);
-	while ((room->link[++i]))
+	while ((room->link) && (room->link[++i]))
 		ft_memdel((void **)&room->link[i]);
 	ft_memdel((void **)&room->link);
-
 	//if ((room->prev))
 		//ft_memdel((void **)&room->prev->next);
 	ft_memdel((void **)&room->prev);
@@ -43,6 +42,7 @@ void	clean_room(t_room *room)
 
 void	clean_all(t_lem *l)
 {
+
 	clean_print(&l->p);
 	clean_room(l->room);
 	clean_room(l->start);
