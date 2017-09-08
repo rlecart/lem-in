@@ -44,7 +44,7 @@ void	clean_all(t_lem *l)
 {
 
 	clean_print(&l->p);
-	clean_room(l->room);
-	clean_room(l->start);
-	clean_room(l->end);
+	//clean_room(l->room);
+	//clean_room(l->start);
+	//clean_room(l->end);
 }

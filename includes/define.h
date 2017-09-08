@@ -21,14 +21,16 @@
 # define FD 2
 # define NB_ANT 3
 # define NAME_ROOM 4
-# define COOR_ROOM 5
-# define INFO_START 6
-# define INFO_END 7
-# define MISS_START 8
-# define MISS_END 9
-# define CONF_START 10
-# define CONF_END 11
-# define LINK 12
-# define LINK_NAME 13
+# define NAME_EXIST 5
+# define COOR_ROOM 6
+# define INFO_START 7
+# define INFO_END 8
+# define MISS_START 9
+# define MISS_END 10
+# define CONF_START 11
+# define CONF_END 12
+# define LINK 13
+# define LINK_NAME 14
+
 
 #endif

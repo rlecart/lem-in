@@ -40,6 +40,12 @@ void	error(t_lem *l, int e)
 	(e == ERROR) ? ft_putstr_fd("ERROR\n", 2) : 0;
 	(e == NB_ANT) ? ft_putstr_fd("Invalide ant number\n", 2) : 0;
 	(e == NAME_ROOM) ? ft_putstr_fd("Invalide room name\n", 2) : 0;
+	if (e == NAME_EXIST)
+	{
+		ft_putstr_fd("Invalide room name : [", 2);
+		ft_putstr_fd(l->p.name_check, 2);
+		ft_putstr_fd("] already exist\n", 2);
+	}
 	(e == COOR_ROOM) ? ft_putstr_fd("Invalide coordinate\n", 2) : 0;
 	(e == INFO_START) ? ft_putstr_fd("Invalide info for start\n", 2) : 0;
 	(e == INFO_END) ? ft_putstr_fd("Invalide info for end\n", 2) : 0;

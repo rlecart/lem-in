@@ -68,6 +68,7 @@ int				sp_gnl(t_lem *l, char **line);
 int				valide_nbr(char *line);
 int				valide_room(t_lem *l, char *line);
 int				valide_link(t_lem *l, char *line);
+void			room_exist(t_lem *l);
 
 void			init(t_lem *l);
 int				init_rooms(t_lem *l);

@@ -1,0 +1,11 @@
+3
+##start
+entreee 1 0
+##end
+fin 5 0
+milieu 9 0
+mid 13 0
+milieu 0 0
+entreee-milieu
+milieu-mid
+mid-entreee

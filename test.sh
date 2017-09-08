@@ -26,6 +26,9 @@ printf "\033[1;34m-----------------------------------------\033[0;m\n"
 	printf "error_room_name_L.map\n"
 	read
 	./lem-in -v < ./tests/error_room_name_L.map
+	printf "error_name_exist.map\n"
+	read
+	./lem-in -v < ./tests/error_name_exist.map
 	printf "error_line_invalide.map\n"
 	read
 	./lem-in -v < ./tests/error_line_invalide.map
@@ -47,8 +50,6 @@ printf "\033[1;34m-----------------------------------------\033[0;m\n"
 	printf "error_two_start.map\n"
 	read
 	./lem-in -v < ./tests/error_two_start.map
-
-
 
 
 printf "\033[1;34m-----------------------------------------\033[0;m\n"
