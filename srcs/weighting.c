@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_puttab_fd.c                                     :+:      :+:    :+:   */
+/*   weighting.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/02/06 14:50:45 by pbernier          #+#    #+#             */
-/*   Updated: 2017/09/10 16:16:50 by pbernier         ###   ########.fr       */
+/*   Created: 2017/09/10 16:43:17 by pbernier          #+#    #+#             */
+/*   Updated: 2017/09/10 17:06:13 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <lem_in.h>
 
-void	ft_puttab_fd(char **tab, int fd)
+void	weighting(t_room *room)
 {
-	int		i;
+	//static int pond;
 
-	i = 0;
-	while (tab[i] || !tab[i][0])
-		ft_putstr_fd(tab[i++], fd);
+	if ((room->nb_link) && room->link[room->nb_link])
+	printf("[%s]\n", room->name);
+	printf("lk[%d] | ", room->nb_link);
+	printf("po[%d]\n", room->pond);
 }

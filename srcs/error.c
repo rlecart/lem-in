@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/31 18:54:09 by pbernier          #+#    #+#             */
-/*   Updated: 2017/09/10 14:47:10 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/09/10 16:41:10 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,9 @@ void	error(t_lem *l, int e)
 	(e == NAME_ROOM) ? ft_putstr_fd("Invalide room name\n", 2) : 0;
 	if (e == NAME_EXIST)
 	{
-		ft_putstr_fd("Invalide room name : [", 2);
-		ft_putstr_fd(YELLOW, 2);
+		ft_putstr_fd("Invalide room name : ["YELLOW, 2);
 		ft_putstr_fd(l->p.name_check, 2);
-		ft_putstr_fd(RED, 2);
-		ft_putstr_fd("] already exist\n", 2);
+		ft_putstr_fd(RED"] already exist\n", 2);
 	}
 	(e == COOR_ROOM) ? ft_putstr_fd("Invalide coordinate\n", 2) : 0;
 	(e == INFO_START) ? ft_putstr_fd("Invalide info for start\n", 2) : 0;
@@ -59,11 +57,9 @@ void	error(t_lem *l, int e)
 	(e == LINK) ? ft_putstr_fd("Invalide link\n", 2) : 0;
 	if (e == LINK_NAME)
 	{
-		ft_putstr_fd("Invalide room name : [", 2);
-		ft_putstr_fd(YELLOW, 2);
+		ft_putstr_fd("Invalide room name : ["YELLOW, 2);
 		ft_putstr_fd(l->p.name_check, 2);
-		ft_putstr_fd(RED, 2);
-		ft_putstr_fd("] doesn't exist\n", 2);
+		ft_putstr_fd(RED"] doesn't exist\n", 2);
 	}
 	clean_all(l);
 	read(1, ((char[2]){"0\0"}), 1);

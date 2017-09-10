@@ -1,11 +1,12 @@
 3
 ##start
-entreee 1 0
+1 0 0
+2 0 0
+3 0 0
+4 0 0
 ##end
-fin 5 0
-milieu 9 0
-mid 13 0
-allo 0 0
-entreee-milieu
-milieu-mid
-mid-entreee
+5 0 0
+1-2
+2-3
+2-4
+4-5
