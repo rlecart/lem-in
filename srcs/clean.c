@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/31 16:54:12 by pbernier          #+#    #+#             */
-/*   Updated: 2017/09/08 16:41:52 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/09/10 14:39:50 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	clean_room(t_room *room)
 
 void	clean_all(t_lem *l)
 {
-
+	ft_putstr_fd("\033[0m", 2);
 	clean_print(&l->p);
 	//clean_room(l->room);
 	//clean_room(l->start);

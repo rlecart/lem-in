@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/31 18:54:09 by pbernier          #+#    #+#             */
-/*   Updated: 2017/09/10 14:28:16 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/09/10 14:47:10 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ void	usage(t_lem *l, int ac, char **av)
 
 void	error(t_lem *l, int e)
 {
+	ft_putstr_fd(RED, 2);
 	(e == MALLOC) ? ft_putstr_fd("Malloc error\n", 2) : 0;
 	(e == FD) ? ft_putstr_fd("Can't read fd 0\n", 2) : 0;
 	if (l->p.v == 0 && e != MALLOC && e != FD)
@@ -43,7 +44,9 @@ void	error(t_lem *l, int e)
 	if (e == NAME_EXIST)
 	{
 		ft_putstr_fd("Invalide room name : [", 2);
+		ft_putstr_fd(YELLOW, 2);
 		ft_putstr_fd(l->p.name_check, 2);
+		ft_putstr_fd(RED, 2);
 		ft_putstr_fd("] already exist\n", 2);
 	}
 	(e == COOR_ROOM) ? ft_putstr_fd("Invalide coordinate\n", 2) : 0;
@@ -57,7 +60,9 @@ void	error(t_lem *l, int e)
 	if (e == LINK_NAME)
 	{
 		ft_putstr_fd("Invalide room name : [", 2);
+		ft_putstr_fd(YELLOW, 2);
 		ft_putstr_fd(l->p.name_check, 2);
+		ft_putstr_fd(RED, 2);
 		ft_putstr_fd("] doesn't exist\n", 2);
 	}
 	clean_all(l);
