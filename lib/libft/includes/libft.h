@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/09 00:30:13 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/18 12:05:35 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/09/10 14:48:13 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ typedef struct		s_strsplit
 
 void				ft_putstr(char *str);
 void				ft_puttab(char **tab);
+void				ft_puttab_fd(char **tab, int fd);
 void				ft_putchar(char c);
 size_t				ft_strlen(const char *s);
 char				*ft_strdup(const char *s1);
