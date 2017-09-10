@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/03 17:04:13 by pbernier          #+#    #+#             */
-/*   Updated: 2017/09/10 16:56:21 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/09/10 19:59:23 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ void	place_rooms(t_lem *l)
 		l->room = l->room->prev;
 	l->room->prev = l->start;
 	l->start->next = l->room;
-	l->room = l->start;
 }
 
 int		init_rooms_struct(t_room **room, t_lem *l, char *line, int len)
