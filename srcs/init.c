@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/31 16:54:06 by pbernier          #+#    #+#             */
-/*   Updated: 2017/09/10 19:59:18 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/09/10 20:06:50 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,5 +53,7 @@ void	init(t_lem *l)
 		ft_memdel((void **)&l->p.line);
 		sp_gnl(l, &l->p.line);
 	}
-	//weighting(l->room);
+	l->room = l->end;
+	while ((l->end->nb_link))
+		weighting(l, l->room);
 }
