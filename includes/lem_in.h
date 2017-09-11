@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/29 19:42:49 by pbernier          #+#    #+#             */
-/*   Updated: 2017/09/11 11:50:36 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/09/11 19:04:35 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ int				init_links(t_lem *l);
 
 void			add_line(t_lem *l);
 
-void			weighting(t_lem *l, t_room *room);
+void			weighting(t_lem *l, t_room *r, int pond, t_room *prev);
 void			print_map(t_print *p);
 void			display(int *ant, char **room, int nb_ant);
 

@@ -69,3 +69,9 @@ printf "\033[1;34m-----------------------------------------\033[0;m\n"
 	printf "valide_comment_between_start_end.map\n"
 	read
 	./lem-in < ./tests/valide_comment_between_start_end.map
+	printf "valide_george.map\n"
+	read
+	./lem-in < ./tests/valide_george.map
+	printf "valide_fish.map\n"
+	read
+	./lem-in < ./tests/valide_fish.map

@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/31 16:54:06 by pbernier          #+#    #+#             */
-/*   Updated: 2017/09/11 11:50:46 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/09/11 19:04:17 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ void	init(t_lem *l)
 		sp_gnl(l, &l->p.line);
 	}
 	l->room = l->end;
-	//while ((l->end->nb_link))
-		weighting(l, l->room);
+	weighting(l, l->room, 0, l->room);
+	if (l->start->pond == -1)
+	 	error(l, NO_PATH);
 }

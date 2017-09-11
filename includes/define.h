@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/31 18:42:22 by pbernier          #+#    #+#             */
-/*   Updated: 2017/09/10 14:46:13 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/09/11 17:11:42 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@
 # define CONF_END 12
 # define LINK 13
 # define LINK_NAME 14
+# define NO_PATH 15
 
 
 #endif

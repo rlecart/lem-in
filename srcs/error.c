@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/31 18:54:09 by pbernier          #+#    #+#             */
-/*   Updated: 2017/09/10 16:41:10 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/09/11 17:12:43 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ void	error(t_lem *l, int e)
 		ft_putstr_fd(l->p.name_check, 2);
 		ft_putstr_fd(RED"] doesn't exist\n", 2);
 	}
+	(e == NO_PATH) ? ft_putstr_fd("No correct path\n", 2) : 0;
 	clean_all(l);
 	read(1, ((char[2]){"0\0"}), 1);
 	exit(0);

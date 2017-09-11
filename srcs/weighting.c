@@ -6,51 +6,30 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/10 16:43:17 by pbernier          #+#    #+#             */
-/*   Updated: 2017/09/11 12:44:01 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/09/11 19:05:42 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <lem_in.h>
 
-void	weighting(t_lem *l, t_room *room)
+void	weighting(t_lem *l, t_room *r, int pond, t_room *prev)
 {
-	(void)l;
-	(void)room;
-	// static int	pond = 0;
-	//
-	// while (l->end->nb_link != 0)
-	// {
-	// 	printf("{[%s]} [%d]\n", room->name, room->nb_link);
-	// 	while ((room->nb_link > 1 || (room->nb_link > 0 && room == l->end)) && room != l->start)
-	// 	{
-	// 		room->pond = pond++;
-	// 		printf("{[%s]} [%d] -> {[%s]}\n", room->name, room->pond, room->link[room->nb_link - 1]->name);
-	// 		room = room->link[--room->nb_link];
-	// 		//printf("{[%s]} [%d]\n", room->name, room->pond);
-	// 	}
-	// 	room = l->end;
-	// 	//while(1);
-	//
-	// }
+	int		nb_tmp;
+	t_room	*tmp;
 
-	//printf("{[%s]} [%d]\n", room->name, room->pond);
+	nb_tmp = r->nb_link;
+	tmp = r;
+	if (tmp == l->end && nb_tmp == 0)
+		return ;
+	if (tmp->pond == -1 || tmp->pond > pond)
+		tmp->pond = pond;
+	while (nb_tmp > 0)
+	{
+		if (tmp->pond == -1 || tmp->pond > pond)
+			tmp->pond = pond;
+		if (tmp == l->start)
+			return ;
+		if (tmp->link[--nb_tmp] != prev)
+			weighting(l, tmp->link[nb_tmp], tmp->pond + 1, tmp);
+	}
 }
-
-
-// //static int	pond = 0;
-// (void)l;
-//
-// while ((room->nb_link > 1 ||
-// 	(room->nb_link > 0 && room == l->end)) &&
-// 	 room != l->start)
-// {
-// 	//printf("[%s]\n", room->name);
-// 	weighting(l, room->link[--room->nb_link]);
-// }
-// //if (room != l->start)
-//
-// //else
-//
-//
-// printf("{[%s]} [%d]\n", room->name, room->nb_link);;
-// //printf("po[%d]\n", room->pond);
