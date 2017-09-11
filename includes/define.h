@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/31 18:42:22 by pbernier          #+#    #+#             */
-/*   Updated: 2017/09/11 17:11:42 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/09/11 20:12:37 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,9 @@
 
 # define ERROR_ON 1
 # define ERROR_OFF 0
+
+# define OCC 0
+# define EMP 1
 
 # define ERROR 0
 # define MALLOC 1

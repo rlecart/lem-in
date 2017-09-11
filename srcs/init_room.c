@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/03 17:04:13 by pbernier          #+#    #+#             */
-/*   Updated: 2017/09/10 19:59:23 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/09/11 20:13:15 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int		init_rooms_struct(t_room **room, t_lem *l, char *line, int len)
 	if (!((*room)->name = ft_strsub(line, 0, len)))
 		error(l, MALLOC);
 	(*room)->pond = -1;
-	(*room)->ant = NULL;
+	(*room)->empty = EMP;
 	(*room)->nb_link = 0;
 	if (!((*room)->link = (t_room **)malloc(sizeof(t_room *))))
 		error(l, MALLOC);

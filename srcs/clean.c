@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/31 16:54:12 by pbernier          #+#    #+#             */
-/*   Updated: 2017/09/11 13:19:27 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/09/11 19:17:10 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,6 @@ void	clean_all(t_lem *l)
 {
 	ft_putstr_fd("\033[0m", 2);
 	clean_print(&l->p);
-	while ((l->room) && (l->room->prev))
-		l->room = l->room->prev;
 	//clean_room(l->room);
 	//clean_room(l->start);
 	//clean_room(l->end);

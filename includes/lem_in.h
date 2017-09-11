@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/29 19:42:49 by pbernier          #+#    #+#             */
-/*   Updated: 2017/09/11 19:04:35 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/09/11 19:26:40 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ struct			s_room
 	t_room		*prev;
 	char		*name;
 	int			pond;
-	t_ant		*ant;
+	int			empty;
 	int			nb_link;
 	t_room		**link;
 	t_room		*next;
@@ -58,6 +58,7 @@ struct			s_lem
 	t_room		*start;
 	t_room		*room;
 	t_room		*end;
+	t_ant		*ant;
 };
 
 void			error(t_lem *l, int e);
@@ -77,6 +78,8 @@ int				init_links(t_lem *l);
 void			add_line(t_lem *l);
 
 void			weighting(t_lem *l, t_room *r, int pond, t_room *prev);
+void			road_trip(t_lem *l);
+
 void			print_map(t_print *p);
 void			display(int *ant, char **room, int nb_ant);
 

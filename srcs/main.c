@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/29 19:40:54 by pbernier          #+#    #+#             */
-/*   Updated: 2017/09/11 19:06:20 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/09/11 19:18:01 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int		main(int ac, char **av)
 
 	usage(&l, ac, av);
 	init(&l);
-
+	road_trip(&l);
 	print_map(&l.p);
 	read(1, ((char[2]){"0\0"}), 1);
 	return (0);

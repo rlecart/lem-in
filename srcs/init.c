@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/31 16:54:06 by pbernier          #+#    #+#             */
-/*   Updated: 2017/09/11 19:04:17 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/09/11 20:13:23 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ void	set_all(t_lem *l)
 	l->start = NULL;
 	l->room = NULL;
 	l->end = NULL;
+	l->ant = NULL;
 }
 
 void	init_ant_nb(t_lem *l)
@@ -42,19 +43,42 @@ void	init_ant_nb(t_lem *l)
 	ft_memdel((void **)&l->p.line);
 }
 
+void	init_ant(t_lem *l)
+{
+	int		i;
+
+	i = -1;
+	if (!(l->ant = (t_ant *)malloc(sizeof(t_ant) * (l->nb_ant + 1))))
+		error(l, MALLOC);
+	ft_bzero(l->ant, sizeof(t_ant) * (l->nb_ant + 1));
+	while (++i < l->nb_ant)
+	{
+		l->ant[i].name = i + 1;
+		l->ant[i].room = l->start;
+	}
+}
+
+void	init_pond(t_lem *l)
+{
+	l->room = l->end;
+	weighting(l, l->room, 0, l->room);
+	if (l->start->pond == -1)
+	 	error(l, NO_PATH);
+	l->room = l->start;
+}
+
 void	init(t_lem *l)
 {
 	set_all(l);
 	init_ant_nb(l);
 	while ((init_rooms(l)))
 		ft_memdel((void **)&l->p.line);
+	l->start->empty = OCC;
 	while ((init_links(l)))
 	{
 		ft_memdel((void **)&l->p.line);
 		sp_gnl(l, &l->p.line);
 	}
-	l->room = l->end;
-	weighting(l, l->room, 0, l->room);
-	if (l->start->pond == -1)
-	 	error(l, NO_PATH);
+	init_pond(l);
+	init_ant(l);
 }
