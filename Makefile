@@ -6,7 +6,7 @@
 #    By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/08 16:32:35 by pbernier          #+#    #+#              #
-#    Updated: 2017/09/12 17:28:11 by pbernier         ###   ########.fr        #
+#    Updated: 2017/09/12 20:15:16 by pbernier         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,6 +29,7 @@ OBJ				=	$(addprefix $(OBJDIR),$(SRC:.c=.o))
 LIB				=	lib/libft/libft.a
 CC				=	gcc
 FLAGS			=	-Wall -Werror -Wextra -Ofast
+DFLAGS			=	-fsanitize=address -g
 INCLUDES		=	-I includes/ -I lib/libft/includes/
 
 all: $(NAME)
@@ -46,6 +47,12 @@ $(OBJDIR)%.o: $(SRCDIR)%.c
 
 $(OBJDIR):
 	@mkdir objs
+
+lldb: $(OBJDIR) $(OBJ)
+	@make -C ./lib/libft re
+	@printf "[$(PROJECT)] Objs compilation done.                                               \n"
+	@$(CC) -o $(NAME) $(OBJ) $(LIB) $(FLAGS) $(DFLAGS)
+	@printf "[$(PROJECT)] $(NAME) compiled.                                                    \n"
 
 clean:
 	@rm -f $(OBJ)

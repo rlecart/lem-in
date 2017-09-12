@@ -75,6 +75,12 @@ printf "\033[1;34m-----------------------------------------\033[0;m\n"
 	printf "valide_george.map\n"
 	read
 	./lem-in < ./tests/valide_george.map
+	printf "valide_longer.map\n"
+	read
+	./lem-in < ./tests/valide_longer.map
 	printf "valide_fish.map\n"
 	read
 	./lem-in < ./tests/valide_fish.map
+	printf "valide_hand.map\n"
+	read
+	./lem-in < ./tests/valide_hand.map

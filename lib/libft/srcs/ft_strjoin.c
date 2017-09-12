@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/15 11:52:16 by pbernier          #+#    #+#             */
-/*   Updated: 2017/08/18 13:13:43 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/09/12 20:17:18 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*str;
-	int		len_s1;
-	int		len_s2;
-	int		i;
-	int		j;
+	size_t	len_s1;
+	size_t	len_s2;
+	size_t	i;
+	size_t	j;
 
 	str = NULL;
 	if (s1 && s2)
@@ -36,7 +36,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		}
 		while (j < len_s2)
 			str[i++] = s2[j++];
-		str[len_s1 + len_s2 + 1] = '\0';
+		str[len_s1 + len_s2] = '\0';
 	}
 	return (str);
 }
