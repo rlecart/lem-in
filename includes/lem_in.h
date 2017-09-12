@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/29 19:42:49 by pbernier          #+#    #+#             */
-/*   Updated: 2017/09/12 14:04:42 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/09/12 15:50:05 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,17 @@
 # include <errno.h>
 # include <string.h>
 
+typedef struct s_road	t_road;
 typedef struct s_ant	t_ant;
 typedef struct s_room	t_room;
 typedef struct s_print	t_print;
 typedef struct s_lem	t_lem;
+
+struct			s_road
+{
+	int			i;
+	int			sw;
+};
 
 struct			s_ant
 {
@@ -59,6 +66,7 @@ struct			s_lem
 	t_room		*room;
 	t_room		*end;
 	t_ant		*ant;
+	t_road		road;
 };
 
 void			error(t_lem *l, int e);
@@ -78,9 +86,10 @@ int				init_links(t_lem *l);
 void			add_line(t_lem *l);
 
 void			weighting(t_lem *l, t_room *r, int pond, t_room *prev);
-void			road_trip(t_lem *l);
+void			road_trip(t_lem *l, t_road *r);
 
 void			print_map(t_print *p);
+void			display(int ant_name, char *room_name);
 //void			display(int *ant, char **room, int nb_ant);
 
 void			clean_all(t_lem *l);

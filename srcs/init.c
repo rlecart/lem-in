@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/31 16:54:06 by pbernier          #+#    #+#             */
-/*   Updated: 2017/09/12 12:53:53 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/09/12 17:07:38 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ void	set_all(t_lem *l)
 	l->room = NULL;
 	l->end = NULL;
 	l->ant = NULL;
+	l->road.i = 0;
+	l->road.sw = 0;
 }
 
 void	init_ant_nb(t_lem *l)

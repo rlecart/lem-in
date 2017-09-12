@@ -6,17 +6,22 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/31 18:42:22 by pbernier          #+#    #+#             */
-/*   Updated: 2017/09/12 12:04:34 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/09/12 14:58:37 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef DEFINE_H
 # define DEFINE_H
 
-# define RED "\033[38;5;1m"
-# define YELLOW "\033[38;5;11m"
 # define RESET "\033[0m"
-
+# define RED "\033[38;5;1m"
+# define RED_MINUS "\033[38;5;9m"
+# define GREEN "\033[38;5;2m"
+# define YELLOW "\033[38;5;3m"
+# define BLUE "\033[38;5;4m"
+# define PINK "\033[38;5;5m"
+# define BRIGHT_BLUE "\033[38;5;6m"
+# define GREY "\033[38;5;8m"
 
 # define ERROR_ON 1
 # define ERROR_OFF 0

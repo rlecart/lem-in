@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/31 18:54:09 by pbernier          #+#    #+#             */
-/*   Updated: 2017/09/12 12:56:48 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/09/12 17:23:54 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	error_link(t_lem *l, int e)
 	(e == LINK) ? ft_putstr_fd("Invalide link\n", 2) : 0;
 	if (e == LINK_NAME)
 	{
-		ft_putstr_fd("Invalide room name : ["YELLOW, 2);
+		ft_putstr_fd("Invalide room name : ["RED_MINUS, 2);
 		ft_putstr_fd(l->p.name_check, 2);
 		ft_putstr_fd(RED"] doesn't exist\n", 2);
 	}
@@ -48,7 +48,7 @@ void	error_room(t_lem *l, int e)
 	(e == NAME_ROOM) ? ft_putstr_fd("Invalide room name\n", 2) : 0;
 	if (e == NAME_EXIST)
 	{
-		ft_putstr_fd("Invalide room name : ["YELLOW, 2);
+		ft_putstr_fd("Invalide room name : ["RED_MINUS, 2);
 		ft_putstr_fd(l->p.name_check, 2);
 		ft_putstr_fd(RED"] already exist\n", 2);
 	}
@@ -72,7 +72,7 @@ void	error(t_lem *l, int e)
 	(e == NB_ANT) ? ft_putstr_fd("Invalide ant number\n", 2) : 0;
 	error_room(l, e);
 	error_link(l, e);
-	ft_putstr_fd("\033[0m", 2);
+	ft_putstr_fd(RESET, 2);
 	read(1, ((char[2]){"0\0"}), 1);
 	exit(0);
 }
