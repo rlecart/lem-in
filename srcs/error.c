@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/31 18:54:09 by pbernier          #+#    #+#             */
-/*   Updated: 2017/09/11 17:12:43 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/09/12 12:56:48 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,15 +31,20 @@ void	usage(t_lem *l, int ac, char **av)
 	exit(0);
 }
 
-void	error(t_lem *l, int e)
+void	error_link(t_lem *l, int e)
 {
-	ft_putstr_fd(RED, 2);
-	(e == MALLOC) ? ft_putstr_fd("Malloc error\n", 2) : 0;
-	(e == FD) ? ft_putstr_fd("Can't read fd 0\n", 2) : 0;
-	if (l->p.v == 0 && e != MALLOC && e != FD)
-		e = ERROR;
-	(e == ERROR) ? ft_putstr_fd("ERROR\n", 2) : 0;
-	(e == NB_ANT) ? ft_putstr_fd("Invalide ant number\n", 2) : 0;
+	(e == LINK) ? ft_putstr_fd("Invalide link\n", 2) : 0;
+	if (e == LINK_NAME)
+	{
+		ft_putstr_fd("Invalide room name : ["YELLOW, 2);
+		ft_putstr_fd(l->p.name_check, 2);
+		ft_putstr_fd(RED"] doesn't exist\n", 2);
+	}
+	(e == NO_PATH) ? ft_putstr_fd("No correct path\n", 2) : 0;
+}
+
+void	error_room(t_lem *l, int e)
+{
 	(e == NAME_ROOM) ? ft_putstr_fd("Invalide room name\n", 2) : 0;
 	if (e == NAME_EXIST)
 	{
@@ -54,15 +59,20 @@ void	error(t_lem *l, int e)
 	(e == MISS_END) ? ft_putstr_fd("Missing room end\n", 2) : 0;
 	(e == CONF_START) ? ft_putstr_fd("Conflict room start\n", 2) : 0;
 	(e == CONF_END) ? ft_putstr_fd("Conflict room end\n", 2) : 0;
-	(e == LINK) ? ft_putstr_fd("Invalide link\n", 2) : 0;
-	if (e == LINK_NAME)
-	{
-		ft_putstr_fd("Invalide room name : ["YELLOW, 2);
-		ft_putstr_fd(l->p.name_check, 2);
-		ft_putstr_fd(RED"] doesn't exist\n", 2);
-	}
-	(e == NO_PATH) ? ft_putstr_fd("No correct path\n", 2) : 0;
-	clean_all(l);
+}
+
+void	error(t_lem *l, int e)
+{
+	ft_putstr_fd(RED, 2);
+	(e == MALLOC) ? ft_putstr_fd("Malloc error\n", 2) : 0;
+	(e == FD) ? ft_putstr_fd("Can't read fd 0\n", 2) : 0;
+	if (l->p.v == 0 && e != MALLOC && e != FD)
+		e = ERROR;
+	(e == ERROR) ? ft_putstr_fd("ERROR\n", 2) : 0;
+	(e == NB_ANT) ? ft_putstr_fd("Invalide ant number\n", 2) : 0;
+	error_room(l, e);
+	error_link(l, e);
+	ft_putstr_fd("\033[0m", 2);
 	read(1, ((char[2]){"0\0"}), 1);
 	exit(0);
 }

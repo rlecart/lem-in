@@ -29,6 +29,12 @@ printf "\033[1;34m-----------------------------------------\033[0;m\n"
 	printf "error_name_exist.map\n"
 	read
 	./lem-in -v < ./tests/error_name_exist.map
+	printf "error_name_dash.map\n"
+	read
+	./lem-in -v < ./tests/error_name_dash.map
+	printf "error_two_start.map\n"
+	read
+	./lem-in -v < ./tests/error_two_start.map
 	printf "error_line_invalide.map\n"
 	read
 	./lem-in -v < ./tests/error_line_invalide.map
@@ -38,18 +44,15 @@ printf "\033[1;34m-----------------------------------------\033[0;m\n"
 	printf "error_link_wrong.map\n"
 	read
 	./lem-in -v < ./tests/error_link_wrong.map
+	printf "error_link_himself.map\n"
+	read
+	./lem-in -v < ./tests/error_link_himself.map
 	printf "error_missing_room.map\n"
 	read
 	./lem-in -v < ./tests/error_missing_room.map
 	printf "error_missing_start.map\n"
 	read
 	./lem-in -v < ./tests/error_missing_start.map
-	printf "error_name_dash.map\n"
-	read
-	./lem-in -v < ./tests/error_name_dash.map
-	printf "error_two_start.map\n"
-	read
-	./lem-in -v < ./tests/error_two_start.map
 
 
 printf "\033[1;34m-----------------------------------------\033[0;m\n"
@@ -68,7 +71,7 @@ printf "\033[1;34m-----------------------------------------\033[0;m\n"
 	./lem-in < ./tests/valide_start_comment.map
 	printf "valide_comment_between_start_end.map\n"
 	read
-	./lem-in < ./tests/valide_comment_between_start_end.map
+	./lem-in -v < ./tests/valide_comment_between_start_end.map
 	printf "valide_george.map\n"
 	read
 	./lem-in < ./tests/valide_george.map

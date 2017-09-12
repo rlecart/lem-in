@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/07 03:37:58 by pbernier          #+#    #+#             */
-/*   Updated: 2017/09/10 19:59:28 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/09/12 12:48:55 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ void	realloc_link(t_lem *l, t_room **room, t_room **obj)
 
 	i = -1;
 	++sw;
+	if (!ft_strcmp((*room)->name, (*obj)->name))
+		error(l, LINK);
 	if (!(list = (t_room **)malloc(sizeof(t_room *) * ((*room)->nb_link + 2))))
 		error(l, MALLOC);
 	list[(*room)->nb_link + 1] = NULL;

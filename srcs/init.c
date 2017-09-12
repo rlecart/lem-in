@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/31 16:54:06 by pbernier          #+#    #+#             */
-/*   Updated: 2017/09/11 20:13:23 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/09/12 12:53:53 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,7 @@ void	init_ant(t_lem *l)
 
 void	init_pond(t_lem *l)
 {
-	l->room = l->end;
-	weighting(l, l->room, 0, l->room);
+	weighting(l, l->end, 0, l->end);
 	if (l->start->pond == -1)
 	 	error(l, NO_PATH);
 	l->room = l->start;

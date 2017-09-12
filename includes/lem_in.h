@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/29 19:42:49 by pbernier          #+#    #+#             */
-/*   Updated: 2017/09/11 19:26:40 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/09/12 14:04:42 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ void			weighting(t_lem *l, t_room *r, int pond, t_room *prev);
 void			road_trip(t_lem *l);
 
 void			print_map(t_print *p);
-void			display(int *ant, char **room, int nb_ant);
+//void			display(int *ant, char **room, int nb_ant);
 
 void			clean_all(t_lem *l);
 
