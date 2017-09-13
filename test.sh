@@ -4,94 +4,93 @@ printf "\033[1;34m-----------------------------------------\033[0;m\n"
 printf "\033[1;34m		Error -v\033[0;m\n"
 printf "\033[1;34m-----------------------------------------\033[0;m\n"
 
-
-	printf "error_ants_0.map\n"
+	printf "\nerror_ants_0.map\n"
 	read
 	./lem-in -v < ./tests/error_ants_0.map
-	printf "error_ants_neg.map\n"
+	printf "\nerror_ants_neg.map\n"
 	read
 	./lem-in -v < ./tests/error_ants_neg.map
-	printf "error_emptyfile.map\n"
+	printf "\nerror_emptyfile.map\n"
 	read
 	./lem-in -v < ./tests/error_emptyfile.map
-	printf "error_start_invalide.map\n"
+	printf "\nerror_start_invalide.map\n"
 	read
 	./lem-in -v < ./tests/error_line_invalide.map
-	printf "error_coor_neg.map\n"
+	printf "\nerror_coor_neg.map\n"
 	read
 	./lem-in -v < ./tests/error_coor_neg.map
-	printf "error_coor.map\n"
+	printf "\nerror_coor.map\n"
 	read
 	./lem-in -v < ./tests/error_coor.map
-	printf "error_room_name_L.map\n"
+	printf "\nerror_room_name_L.map\n"
 	read
 	./lem-in -v < ./tests/error_room_name_L.map
-	printf "error_name_exist.map\n"
+	printf "\nerror_name_exist.map\n"
 	read
 	./lem-in -v < ./tests/error_name_exist.map
-	printf "error_name_dash.map\n"
+	printf "\nerror_name_dash.map\n"
 	read
 	./lem-in -v < ./tests/error_name_dash.map
-	printf "error_two_start.map\n"
+	printf "\nerror_two_start.map\n"
 	read
 	./lem-in -v < ./tests/error_two_start.map
-	printf "error_line_invalide.map\n"
+	printf "\nerror_line_invalide.map\n"
 	read
 	./lem-in -v < ./tests/error_line_invalide.map
-	printf "error_link_missing.map\n"
+	printf "\nerror_link_missing.map\n"
 	read
 	./lem-in -v < ./tests/error_link_missing.map
-	printf "error_link_wrong.map\n"
+	printf "\nerror_link_wrong.map\n"
 	read
 	./lem-in -v < ./tests/error_link_wrong.map
-	printf "error_link_himself.map\n"
+	printf "\nerror_link_himself.map\n"
 	read
 	./lem-in -v < ./tests/error_link_himself.map
-	printf "error_missing_room.map\n"
+	printf "\nerror_missing_room.map\n"
 	read
 	./lem-in -v < ./tests/error_missing_room.map
-	printf "error_missing_start.map\n"
+	printf "\nerror_missing_start.map\n"
 	read
 	./lem-in -v < ./tests/error_missing_start.map
-	printf "dev/random\n"
+	printf "\ndev/random\n"
 	read
 	./lem-in -v < /dev/random
 
-printf "\033[1;34m-----------------------------------------\033[0;m\n"
+printf "\n\033[1;34m-----------------------------------------\033[0;m\n"
 printf "\033[1;34m		Valide\033[0;m\n"
 printf "\033[1;34m-----------------------------------------\033[0;m\n"
 
 
-	printf "valide_simple.map\n"
+	printf "\nvalide_simple.map\n"
 	read
 	./lem-in < ./tests/valide_simple.map
-	printf "valide_start_commande.map\n"
+	printf "\nvalide_start_commande.map\n"
 	read
 	./lem-in < ./tests/valide_start_commande.map
-	printf "valide_start_comment.map\n"
+	printf "\nvalide_start_comment.map\n"
 	read
 	./lem-in < ./tests/valide_start_comment.map
-	printf "valide_comment_between_start_end.map\n"
+	printf "\nvalide_comment_between_start_end.map\n"
 	read
 	./lem-in -v < ./tests/valide_comment_between_start_end.map
-	printf "valide_george.map\n"
+	printf "\nvalide_george.map\n"
 	read
 	./lem-in < ./tests/valide_george.map
-	printf "valide_longer.map\n"
+	printf "\nvalide_longer.map\n"
 	read
 	./lem-in < ./tests/valide_longer.map
-	printf "valide_fish.map\n"
+	printf "\nvalide_fish.map\n"
 	read
 	./lem-in < ./tests/valide_fish.map
-	printf "valide_hand.map\n"
+	printf "\nvalide_hand.map\n"
 	read
 	./lem-in < ./tests/valide_hand.map
-	printf "valide_start_end.map\n"
+	printf "\nvalide_start_end.map\n"
 	read
 	./lem-in < ./tests/valide_start_end.map
-	printf "valide_web.map\n"
+	printf "\nvalide_web.map\n"
 	read
 	./lem-in < ./tests/valide_web.map
-	printf "valide_10k_rooms.map\n"
+	printf "\nvalide_10k_rooms.map\n"
 	read
 	./lem-in < ./tests/valide_10k_rooms.map

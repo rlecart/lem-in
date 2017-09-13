@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/29 19:42:49 by pbernier          #+#    #+#             */
-/*   Updated: 2017/09/13 14:46:55 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/09/13 15:36:53 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,6 @@ void			road_trip(t_lem *l, t_road *r);
 void			print_map(t_print *p);
 void			display(int ant_name, char *room_name);
 
-void			clean_all(t_lem *l);
+void			clean_print(t_print *p);
 
 #endif
