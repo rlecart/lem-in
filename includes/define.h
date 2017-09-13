@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/31 18:42:22 by pbernier          #+#    #+#             */
-/*   Updated: 2017/09/13 16:08:40 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/09/13 18:53:39 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,6 @@
 # define PINK "\033[38;5;5m"
 # define BRIGHT_BLUE "\033[38;5;6m"
 # define GREY "\033[38;5;8m"
-
-# define ERROR_ON 1
-# define ERROR_OFF 0
 
 # define OCC 0
 # define EMP 1

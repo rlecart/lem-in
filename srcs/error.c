@@ -6,13 +6,13 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/31 18:54:09 by pbernier          #+#    #+#             */
-/*   Updated: 2017/09/13 16:42:57 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/09/13 18:51:10 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <lem_in.h>
 
-char	good_arg(t_lem *l, char *av)
+char	good_option(t_lem *l, char *av)
 {
 	int		i;
 
@@ -37,14 +37,14 @@ void	usage(t_lem *l, int ac, char **av)
 		(ac == 2 && av[1][0] == '-' && !av[1][1]))
 	{
 		ft_putstr_fd("usage: ./lem-in < [-vlp] map\n", 2);
-		exit(0);
+		exit(-1);
 	}
-	if (ac == 2 && !good_arg(l, av[1]))
+	else if (ac == 2 && !good_option(l, av[1]))
 	{
 		ft_putstr_fd("lem-in: illegal option -- ", 2);
 		ft_putstr_fd(av[1], 2);
 		ft_putstr_fd("\nusage: ./lem-in < [-vlp] map\n", 2);
-		exit(0);
+		exit(-1);
 	}
 }
 
@@ -80,7 +80,18 @@ void	error_room(t_lem *l, int e)
 
 void	error(t_lem *l, int e)
 {
+	char	*nb_line;
+
 	ft_putstr_fd(RED, 2);
+	if (l->p.l && e != NO_PATH)
+	{
+		ft_putstr_fd("[", 2);
+		ft_putstr_fd(RED_MINUS"l:", 2);
+		nb_line = ft_itoa(l->p.nb_line);
+		ft_putstr_fd(nb_line, 2);
+		ft_memdel((void **)&nb_line);
+		ft_putstr_fd(RED"] ", 2);
+	}
 	(e == MALLOC) ? ft_putstr_fd("Malloc error\n", 2) : 0;
 	(e == FD) ? ft_putstr_fd("Can't read fd 0\n", 2) : 0;
 	if (l->p.v == 0 && e != MALLOC && e != FD)
@@ -90,7 +101,7 @@ void	error(t_lem *l, int e)
 	error_room(l, e);
 	error_link(l, e);
 	ft_putstr_fd(RESET, 2);
-	read(1, ((char[2]){"0\0"}), 1);
 	clean_print(&l->p);
+	clean_ant(&l->ant);
 	exit(0);
 }

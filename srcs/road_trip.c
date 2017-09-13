@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/11 19:19:08 by pbernier          #+#    #+#             */
-/*   Updated: 2017/09/13 16:08:30 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/09/13 17:45:24 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,8 @@ void	change_room(t_lem *l, t_road *r, t_room *tmp)
 	l->ant[r->i].room = tmp;
 	(r->sw == 1) ? ft_putchar(' ') : 0;
 	r->sw = 1;
-	display(l->ant[r->i].name, l->ant[r->i].room->name);
+	display(l, l->ant[r->i].room->pond,
+		l->ant[r->i].name, l->ant[r->i].room->name);
 }
 
 void	road_trip(t_lem *l, t_road *r)

@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/02 13:26:55 by pbernier          #+#    #+#             */
-/*   Updated: 2017/09/13 16:08:26 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/09/13 18:17:31 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,17 @@ void	print_map(t_print *p)
 	ft_memdel((void **)&p->map);
 }
 
-void	display(int ant_name, char *room_name)
+void	display(t_lem *l, int pond, int ant_name, char *room_name)
 {
 	ft_putstr("L"BRIGHT_BLUE);
 	ft_putnbr(ant_name);
 	ft_putstr(RESET"-"RED_MINUS);
 	ft_putstr(room_name);
 	ft_putstr(RESET);
+	if (l->p.p)
+	{
+		ft_putstr("("GREY);
+		ft_putnbr(pond);
+		ft_putstr(RESET")");
+	}
 }
