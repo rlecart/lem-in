@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/03 14:50:52 by pbernier          #+#    #+#             */
-/*   Updated: 2017/09/08 16:52:42 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/09/13 14:56:51 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,14 +58,14 @@ void	room_exist(t_lem *l)
 
 	tmp = NULL;
 	if (((l->start) && !(ft_strcmp(l->p.name_check, l->start->name))) ||
-				((l->end) && !(ft_strcmp(l->p.name_check, l->end->name))))
-	error(l, NAME_EXIST);
+		((l->end) && !(ft_strcmp(l->p.name_check, l->end->name))))
+		error(l, NAME_EXIST);
 	tmp = l->room;
 	while ((tmp))
 	{
 		if (!(ft_strcmp(l->p.name_check, tmp->name)))
-	 		error(l, NAME_EXIST);
-	 	tmp = tmp->prev;
+			error(l, NAME_EXIST);
+		tmp = tmp->prev;
 	}
 	ft_memdel((void **)&l->p.name_check);
 }

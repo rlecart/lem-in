@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/07 03:37:58 by pbernier          #+#    #+#             */
-/*   Updated: 2017/09/12 12:48:55 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/09/13 14:53:49 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ int		init_links(t_lem *l)
 	if (!l->p.line[0])
 		return (0);
 	if ((l->p.line[0] == '#') || (!ft_strncmp(l->p.line, "##", 2)))
-	 	return (1);
+		return (1);
 	if (!(valide_link(l, l->p.line)))
 		return (0);
 	while ((l->p.line[len_1] != '-'))

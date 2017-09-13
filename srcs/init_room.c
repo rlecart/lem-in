@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/03 17:04:13 by pbernier          #+#    #+#             */
-/*   Updated: 2017/09/11 20:13:15 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/09/13 14:54:52 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,7 +103,7 @@ int		init_end(t_lem *l)
 int		init_rooms(t_lem *l)
 {
 	if (!sp_gnl(l, &l->p.line))
-		return(0);
+		return (0);
 	if ((l->p.line[0] == '#') || (!ft_strncmp(l->p.line, "##", 2)))
 		add_line(l);
 	if ((l->p.line[0] == '#') && (ft_strncmp(l->p.line, "##", 2)))

@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/31 16:54:06 by pbernier          #+#    #+#             */
-/*   Updated: 2017/09/12 20:23:25 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/09/13 14:53:37 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,8 @@ void	init_ant_nb(t_lem *l)
 		ft_memdel((void **)&l->p.line);
 		sp_gnl(l, &l->p.line);
 	}
-	if (!valide_nbr(l->p.line))
+	if (!valide_nbr(l->p.line) ||
+		((l->p.line) && l->p.line[0] == '-'))
 		error(l, NB_ANT);
 	if ((l->nb_ant = ft_atoi(l->p.line)) <= 0)
 		error(l, NB_ANT);
@@ -64,7 +65,7 @@ void	init_pond(t_lem *l)
 {
 	weighting(l, l->end, 0, l->end);
 	if (l->start->pond == -1)
-	 	error(l, NO_PATH);
+		error(l, NO_PATH);
 	l->room = l->start;
 }
 
@@ -74,7 +75,6 @@ void	init(t_lem *l)
 	init_ant_nb(l);
 	while ((init_rooms(l)))
 		ft_memdel((void **)&l->p.line);
-		// ft_putstr("DONE\n");
 	l->start->empty = OCC;
 	while ((init_links(l)))
 	{

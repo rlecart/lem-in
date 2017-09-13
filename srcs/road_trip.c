@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/11 19:19:08 by pbernier          #+#    #+#             */
-/*   Updated: 2017/09/12 19:22:32 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/09/13 14:54:31 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,9 @@ int		valide_path(t_lem *l, t_room *room, t_ant *ant)
 	int		i;
 
 	i = -1;
-
 	if (room->empty == OCC || ant->room != l->start ||
 		((l->nb_ant - ant->name) <= ((room->pond + 1) / ant->room->pond)))
-		return(0);
+		return (0);
 	while (room->link[++i])
 		if (room->link[i]->pond < room->pond && room->link[i] != ant->room)
 			return (1);

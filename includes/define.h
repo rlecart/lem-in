@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/31 18:42:22 by pbernier          #+#    #+#             */
-/*   Updated: 2017/09/12 14:58:37 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/09/13 14:46:47 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,5 @@
 # define LINK 13
 # define LINK_NAME 14
 # define NO_PATH 15
-
 
 #endif

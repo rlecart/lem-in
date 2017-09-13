@@ -53,7 +53,9 @@ printf "\033[1;34m-----------------------------------------\033[0;m\n"
 	printf "error_missing_start.map\n"
 	read
 	./lem-in -v < ./tests/error_missing_start.map
-
+	printf "dev/random\n"
+	read
+	./lem-in -v < /dev/random
 
 printf "\033[1;34m-----------------------------------------\033[0;m\n"
 printf "\033[1;34m		Valide\033[0;m\n"
@@ -84,3 +86,12 @@ printf "\033[1;34m-----------------------------------------\033[0;m\n"
 	printf "valide_hand.map\n"
 	read
 	./lem-in < ./tests/valide_hand.map
+	printf "valide_start_end.map\n"
+	read
+	./lem-in < ./tests/valide_start_end.map
+	printf "valide_web.map\n"
+	read
+	./lem-in < ./tests/valide_web.map
+	printf "valide_10k_rooms.map\n"
+	read
+	./lem-in < ./tests/valide_10k_rooms.map

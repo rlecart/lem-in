@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/31 16:50:05 by pbernier          #+#    #+#             */
-/*   Updated: 2017/09/12 20:14:30 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/09/13 14:52:57 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,19 @@ int		sp_gnl(t_lem *l, char **line)
 	char	*buff;
 
 	size = 0;
-	if (!(buff = ft_strdup("A")))
-		error(l, MALLOC);
-	if (!(*line = (char *)malloc(sizeof(char) * (size + 1))))
-		error(l, MALLOC);
+	(!(buff = ft_strdup("A"))) ? error(l, MALLOC) : 0;
+	ft_memcpy(buff, ((char[2]){"A\0"}), sizeof(char[2]));
+	(!(*line = malloc(sizeof(char) * (size + 1)))) ? error(l, MALLOC) : 0;
 	(*line)[size] = '\0';
 	while (buff[0] != '\n')
 	{
 		if ((ret = read(0, buff, 1)) == -1)
 			error(l, FD);
 		if (!ret)
+		{
+			ft_memdel((void **)&buff);
 			return (ret);
+		}
 		ft_strjoin_clean(line, &buff);
 		++size;
 	}
