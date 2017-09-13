@@ -6,7 +6,7 @@
 #    By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/08 16:32:35 by pbernier          #+#    #+#              #
-#    Updated: 2017/09/12 20:15:16 by pbernier         ###   ########.fr        #
+#    Updated: 2017/09/13 16:07:27 by pbernier         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,12 +47,6 @@ $(OBJDIR)%.o: $(SRCDIR)%.c
 
 $(OBJDIR):
 	@mkdir objs
-
-lldb: $(OBJDIR) $(OBJ)
-	@make -C ./lib/libft re
-	@printf "[$(PROJECT)] Objs compilation done.                                               \n"
-	@$(CC) -o $(NAME) $(OBJ) $(LIB) $(FLAGS) $(DFLAGS)
-	@printf "[$(PROJECT)] $(NAME) compiled.                                                    \n"
 
 clean:
 	@rm -f $(OBJ)
