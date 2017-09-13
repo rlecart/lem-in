@@ -6,29 +6,46 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/31 18:54:09 by pbernier          #+#    #+#             */
-/*   Updated: 2017/09/13 16:07:41 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/09/13 16:42:57 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <lem_in.h>
 
+char	good_arg(t_lem *l, char *av)
+{
+	int		i;
+
+	i = 0;
+	while (av[++i])
+	{
+		l->p.v = (av[i] == 'v') ? 1 : l->p.v;
+		l->p.l = (av[i] == 'l') ? 1 : l->p.l;
+		l->p.p = (av[i] == 'p') ? 1 : l->p.p;
+		if (av[i] != 'v' && av[i] != 'l' && av[i] != 'p')
+			return (0);
+	}
+	return (1);
+}
+
 void	usage(t_lem *l, int ac, char **av)
 {
 	l->p.v = 0;
-	if (ac == 2 && (ft_strcmp(av[1], "-v")))
+	l->p.l = 0;
+	l->p.p = 0;
+	if (ac > 2 || (ac == 2 && av[1][0] != '-') ||
+		(ac == 2 && av[1][0] == '-' && !av[1][1]))
 	{
-		ft_putstr_fd("lem-in: illegal option -- ", 2);
-		ft_putstr_fd(av[0], 2);
-		ft_putstr_fd("\nusage: ./lem-in < [-v] map\n", 2);
+		ft_putstr_fd("usage: ./lem-in < [-vlp] map\n", 2);
 		exit(0);
 	}
-	else if (ac > 2)
-		ft_putstr_fd("usage: ./lem-in < [-v] map\n", 2);
-	else if (ac == 2 && !(ft_strcmp(av[1], "-v")))
-		l->p.v = 1;
-	if (ac == 1 || ac == 2)
-		return ;
-	exit(0);
+	if (ac == 2 && !good_arg(l, av[1]))
+	{
+		ft_putstr_fd("lem-in: illegal option -- ", 2);
+		ft_putstr_fd(av[1], 2);
+		ft_putstr_fd("\nusage: ./lem-in < [-vlp] map\n", 2);
+		exit(0);
+	}
 }
 
 void	error_link(t_lem *l, int e)

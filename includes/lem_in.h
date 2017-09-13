@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/29 19:42:49 by pbernier          #+#    #+#             */
-/*   Updated: 2017/09/13 16:08:39 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/09/13 16:17:01 by pbernier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,8 @@ struct			s_room
 struct			s_print
 {
 	int			v;
+	int			l;
+	int			p;
 	char		*line;
 	char		*map;
 	char		*name_check;
