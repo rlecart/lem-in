@@ -1,0 +1,35 @@
+3
+#oui1
+##oui2
+##start
+#oui3
+##oui4
+0 1 0
+#oui5
+##end
+#haha
+1 5 0
+#oui1
+##oui2
+#oui3
+##oui4
+##oui6
+2 9 0
+3 13 0
+#oui1
+##oui2
+#oui3
+##oui4
+#non
+##ah bah non
+0-2
+#oui1
+##oui2
+#oui3
+##oui4
+2-3
+3-1
+#oui1
+##oui2
+#oui3
+##oui4
