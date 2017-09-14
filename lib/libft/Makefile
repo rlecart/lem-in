@@ -6,7 +6,7 @@
 #    By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/02/21 03:19:16 by pbernier          #+#    #+#              #
-#    Updated: 2017/09/13 16:08:51 by pbernier         ###   ########.fr        #
+#    Updated: 2017/09/13 16:57:54 by rlecart          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -94,7 +94,7 @@ SRC			=	ft_putstr.c \
 OBJ			=	$(addprefix $(OBJDIR),$(SRC:.c=.o))
 CC			=	gcc
 CFLAGS		=	-Wall -Werror -Wextra -I includes/ -Ofast
-DFLAGS		= 	-fsanitize=address -g
+DFLAGS		= 	-g
 
 all: $(NAME)
 
@@ -106,7 +106,7 @@ $(NAME): $(OBJDIR) $(OBJ)
 
 $(OBJDIR)%.o: $(SRCDIR)%.c
 	@printf "\r[$(PROJECT)] Compiling $< to $@                            \r"
-	@$(CC) $(CFLAGS) -o $@ -c $<
+	@$(CC) $(CFLAGS) -o $@ -c $< $(DFLAGS)
 
 $(OBJDIR):
 	@mkdir objs

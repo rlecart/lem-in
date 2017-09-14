@@ -6,7 +6,7 @@
 /*   By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/31 18:54:09 by pbernier          #+#    #+#             */
-/*   Updated: 2017/09/13 16:07:41 by pbernier         ###   ########.fr       */
+/*   Updated: 2017/09/13 17:56:10 by rlecart          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ void	error(t_lem *l, int e)
 	error_room(l, e);
 	error_link(l, e);
 	ft_putstr_fd(RESET, 2);
-	read(1, ((char[2]){"0\0"}), 1);
 	clean_print(&l->p);
+	read(1, ((char[2]){"0\0"}), 1);
 	exit(0);
 }

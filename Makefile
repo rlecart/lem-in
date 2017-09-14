@@ -6,7 +6,7 @@
 #    By: pbernier <pbernier@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/08 16:32:35 by pbernier          #+#    #+#              #
-#    Updated: 2017/09/13 16:07:27 by pbernier         ###   ########.fr        #
+#    Updated: 2017/09/13 17:44:21 by rlecart          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,8 +28,8 @@ SRC				=	main.c \
 OBJ				=	$(addprefix $(OBJDIR),$(SRC:.c=.o))
 LIB				=	lib/libft/libft.a
 CC				=	gcc
-FLAGS			=	-Wall -Werror -Wextra -Ofast
-DFLAGS			=	-fsanitize=address -g
+FLAGS			=	-Wall -Werror -Wextra
+DFLAGS			=	-g
 INCLUDES		=	-I includes/ -I lib/libft/includes/
 
 all: $(NAME)
@@ -37,13 +37,13 @@ all: $(NAME)
 $(NAME): $(OBJDIR) $(OBJ)
 	@make -C ./lib/libft
 	@printf "[$(PROJECT)] Objs compilation done.                                               \n"
-	@$(CC) -o $(NAME) $(OBJ) $(LIB) $(FLAGS)
+	@$(CC) -o $(NAME) $(OBJ) $(LIB) $(FLAGS) $(DFLAGS)
 	@printf "[$(PROJECT)] $(NAME) compiled.                                                    \n"
 
 
 $(OBJDIR)%.o: $(SRCDIR)%.c
 	@printf "[$(PROJECT)] Compiling $< to $@                                                   \r"
-	@$(CC) $(FLAGS) $(INCLUDES) -o $@ -c $<
+	@$(CC) $(FLAGS) $(INCLUDES) -o $@ -c $< $(DFLAGS)
 
 $(OBJDIR):
 	@mkdir objs
